@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pemasaran Kangkung Segar</title>
+<style>
+:root {
+  --utama:#2e8b57;
+  --sekunder:#3cb371;
+  --bg:#f5fff7;
+  --text:#123;
+}
+
+body {
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:
+    url('https://www.transparenttextures.com/patterns/leaves.png'),
+    linear-gradient(180deg, #e9fce5, #f5fff7);
+  background-repeat: repeat;
+  background-attachment: fixed;
+  color:var(--text);
+}
+
+header {
+  background:var(--utama);
+  color:white;
+  padding:10px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+nav a {
+  color:white;
+  text-decoration:none;
+  margin:0 10px;
+  font-weight:500;
+}
+
+nav a:hover {
+  text-decoration:underline;
+}
+
+/* SLIDER */
+.slider {
+  position:relative;
+  overflow:hidden;
+  height:300px;
+}
+
+.slide {
+  width:100%;
+  height:300px;
+  display:none;
+  position:absolute;
+  top:0;left:0;
+}
+
+.slide img {
+  width:100%;
+  height:300px;
+  object-fit:cover;
+}
+
+.active {
+  display:block;
+}
+
+.slide-nav {
+  position:absolute;
+  width:100%;
+  top:50%;
+  display:flex;
+  justify-content:space-between;
+}
+
+.slide-nav button {
+  background:rgba(0,0,0,0.4);
+  color:white;
+  border:none;
+  font-size:20px;
+  padding:5px 10px;
+  cursor:pointer;
+}
+
+/* KONTEN UTAMA */
+section {
+  padding:20px;
+  text-align:center;
+}
+
+.kartu {
+  display:inline-block;
+  width:250px;
+  background:white;
+  box-shadow:0 0 5px rgba(0,0,0,0.1);
+  border-radius:8px;
+  margin:10px;
+  overflow:hidden;
+  transition:transform .2s;
+}
+
+.kartu:hover {
+  transform:scale(1.03);
+}
+
+.kartu img {
+  width:100%;
+  height:150px;
+  object-fit:cover;
+}
+
+.kartu h3 {
+  margin:10px 0;
+  color:var(--utama);
+}
+
+footer {
+  background:var(--utama);
+  color:white;
+  text-align:center;
+  padding:10px;
+  margin-top:30px;
+}
+
+/* KONTAK */
+.kontak {
+  background:#ffffffcc;
+  backdrop-filter:blur(6px);
+  padding:20px;
+  max-width:400px;
+  margin:20px auto;
+  border-radius:10px;
+  box-shadow:0 0 8px rgba(0,0,0,0.1);
+}
+
+.kontak input, .kontak textarea {
+  width:100%;
+  padding:8px;
+  margin:6px 0;
+  border:1px solid #ccc;
+  border-radius:5px;
+}
+
+.kontak button {
+  background:var(--sekunder);
+  color:white;
+  border:none;
+  padding:10px 15px;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+.kontak button:hover {
+  background:var(--utama);
+}
+
+/* RESPONSIVE */
+@media (max-width:600px){
+  header {flex-direction:column;}
+  .kartu {width:90%;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Pemasaran Kangkung Segar</h1>
+  <nav>
+    <a href="#beranda">Beranda</a>
+    <a href="#produk">Produk</a>
+    <a href="#kontak">Kontak</a>
+    <a href="#alamat">Alamat</a>
+    <a title="WhatsApp" href="https://wa.me/6283133565067" target="_blank">WA</a>
+    <a title="Instagram" href="https://instagram.com/zzkykhld_" target="_blank">IG</a>
+    <a title="Facebook" href="https://facebook.com/" target="_blank">FB</a>
+  </nav>
+</header>
+
+<!-- SLIDER -->
+<div class="slider" id="beranda">
+  <div class="slide active">
+    <img src="OIP.webp" alt="Kangkung Segar">
+  </div>
+  <div class="slide">
+    <img src="image copy.png" alt="Budidaya Kangkung">
+  </div>
+  <div class="slide">
+    <img src="image.png" alt="Panen Kangkung">
+  </div>
+  <div class="slide-nav">
+    <button onclick="prevSlide()">❮</button>
+    <button onclick="nextSlide()">❯</button>
+  </div>
+</div>
+
+<section>
+  <h2>Tentang Produk Kami</h2>
+  <p>Kangkung segar hasil komunitas mahasiswa, dipanen dengan teliti dan dikirim langsung ke pasar dan pelanggan. Kami mengutamakan kesegaran, kebersihan, dan harga yang terjangkau.</p>
+
+  <div class="kartu">
+    <img src="https://images.unsplash.com/photo-1590080875831-3b1eaf9c2b13?auto=format&fit=crop&w=800&q=80" alt="">
+    <h3>Segar Setiap Hari</h3>
+    <p>Dipetik langsung dari kebun.</p>
+  </div>
+
+  <div class="kartu">
+    <img src="https://images.unsplash.com/photo-1625231334165-9fef19b45779?auto=format&fit=crop&w=800&q=80" alt="">
+    <h3>Harga Terjangkau</h3>
+    <p>Kualitas premium dengan harga ramah kantong.</p>
+  </div>
+
+  <div class="kartu">
+    <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=800&q=80" alt="">
+    <h3>Ramah Lingkungan</h3>
+    <p>Tanpa bahan kimia berbahaya.</p>
+  </div>
+</section>
+
+<section id="produk">
+  <h2>Daftar Produk Kangkung</h2>
+
+  <div class="kartu">
+    <img src="https://images.unsplash.com/photo-1607301405392-c0c91f3bcdaf?auto=format&fit=crop&w=800&q=80" alt="">
+    <h3>Kangkung Air</h3>
+    <p>Rp 5.000 / ikat</p>
+    <button onclick="openWA('Saya ingin pesan Kangkung Air')">Pesan via WA</button>
+  </div>
+
+  <div class="kartu">
+    <img src="https://images.unsplash.com/photo-1625231334165-9fef19b45779?auto=format&fit=crop&w=800&q=80" alt="">
+    <h3>Kangkung Darat</h3>
+    <p>Rp 4.500 / ikat</p>
+    <button onclick="openWA('Saya ingin pesan Kangkung Darat')">Pesan via WA</button>
+  </div>
+</section>
+
+<section id="kontak">
+  <h2>Hubungi Kami</h2>
+  <div class="kontak">
+    <form onsubmit="event.preventDefault();openWA('Halo, saya ingin menanyakan produk kangkung')">
+      <input type="text" placeholder="Nama Anda" required>
+      <input type="email" placeholder="Email" required>
+      <textarea rows="4" placeholder="Pesan..." required></textarea>
+      <button type="submit">Kirim via WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+<section id="alamat">
+  <h2>Alamat Kami</h2>
+  <p>Desa Karya Sari, Kec. Cikedal, Kab. Pandeglang — Provinsi Banten</p>
+  <iframe src="https://www.google.com/maps?q=Cikedal,+Pandeglang&output=embed" width="90%" height="300" style="border:0;" allowfullscreen=""></iframe>
+</section>
+
+<footer>
+  <p>&copy; <span id="tahun"></span> Pemasaran Kangkung Segar | Semua Hak Dilindungi</p>
+</footer>
+
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function showSlide(index) {
+  slides.forEach((s,i)=>s.classList.toggle('active', i===index));
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
+
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(currentSlide);
+}
+
+setInterval(nextSlide, 4000);
+document.getElementById('tahun').textContent = new Date().getFullYear();
+
+function openWA(pesan) {
+  const WA_NUMBER = '6283133565067';
+  const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(pesan)}`;
+  window.open(url,'_blank');
+}
+</script>
+
+</body>
+</html>
